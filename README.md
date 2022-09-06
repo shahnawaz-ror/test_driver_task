@@ -3,7 +3,7 @@
 ### Clone the repository
 
 ```bash
-git clone https://github.com/shimroz1992/demo-driver.git
+
 cd demo-driver
 
 ```
