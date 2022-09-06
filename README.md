@@ -1,27 +1,57 @@
+## Install
 
-# test_driver_task
-=======
-# README
+### Clone the repository
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```bash
+git clone https://github.com/shimroz1992/demo-driver.git
+cd demo-driver
 
-Things you may want to cover:
+```
 
-* Ruby version
+### Check your Ruby version
 
-* System dependencies
+```bash
+ruby -v
+```
 
-* Configuration
+The ouput should start with something like `ruby 3.1.2`
 
-* Database creation
+If not, install the right ruby version using rvm (it could take a while):
 
-* Database initialization
+```bash
+rvm install "ruby-3.1.2"
+```
 
-* How to run the test suite
+### Install dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+Using [Bundler](https://github.com/bundler/bundler):
 
-* Deployment instructions
+```bash
+bundle
+```
 
-* ...
+### Update database.yml file
+In database.yml file, edit the database configuration as required.
+
+### Initialize the database
+
+```ruby
+rails db:create db:migrate db:seed
+```
+
+### Serve
+
+```ruby
+rails s
+```
+And now you can visit the site with the URL http://localhost:3000/api-docs/index.html
+
+### Additonal Info
+if you create changes in spec folder
+run below command
+
+```bash
+rake rswag:specs:swaggerize 
+```
+**DataBase ERDiagram**
+[erd.pdf](https://github.com/shahnawaz-ror/test_driver_task/files/9497744/erd.pdf)
