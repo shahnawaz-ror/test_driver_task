@@ -180,7 +180,7 @@ paths:
                 transaction_history_id:
                   type: integer
 servers:
-- url: http://{defaultHost}
+- url: https://{defaultHost}
   variables:
     defaultHost:
       default: testdrivertask.herokuapp.com/api/v1

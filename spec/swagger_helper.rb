@@ -14,7 +14,7 @@ RSpec.configure do |config|
       paths: {},
       servers: [
         {
-          url: 'http://{defaultHost}',
+          url: 'https://{defaultHost}',
           variables: {
             defaultHost: {
               default: 'https://testdrivertask.herokuapp.com/api/v1'
