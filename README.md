@@ -3,8 +3,8 @@
 ### Clone the repository
 
 ```bash
-
-cd demo-driver
+https://github.com/shahnawaz-ror/test_driver_task.git
+cd test_driver_tas
 
 ```
 
