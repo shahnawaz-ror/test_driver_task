@@ -14,7 +14,7 @@ RSpec.describe 'drivers', type: :request do
           transaction_type: { type: :integer }
         }
       }
-      response '200', 'order created' do
+      response '200', 'fuel created' do
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
