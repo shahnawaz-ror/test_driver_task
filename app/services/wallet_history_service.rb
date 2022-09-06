@@ -16,7 +16,18 @@ class WalletHistoryService
       @wallet_history = driver.wallet_histories.create(total_amount:total_amount, transaction_histories_ids: transaction_histories_ids, card_detail_id: card_detail.id, wallet_id: wallet.id) if @wallet_history.blank?
       wallet = Wallet.find_by_wallet_type(1)
       wallet_total_amount = wallet.wallet_histories.map(&:total_amount).sum
-      wallet.update(total_amount: wallet_total_amount)    
+      wallet.update(total_amount: wallet_total_amount)
+    elsif transaction_histories.blank?
+      total_amount = TransactionHistory.non_settled_transactions.map(&:amount).sum
+      if total_amount.present?
+        wallet = Wallet.find_by_wallet_type(1)
+        wallet_total_amount = wallet.wallet_histories.map(&:total_amount).sum
+        wallet.update(total_amount: wallet_total_amount)
+      else
+        wallet = Wallet.find_by_wallet_type(1)
+        wallet.update(total_amount: 0)
+      end
+    else
     end
   end
 end
